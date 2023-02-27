@@ -7,7 +7,6 @@ import java.util.ArrayList;
 //2. create a menu that will allow the user to choose which method they want to run
 //3. create a method for each option
 
-
 public class Main { //Main class
     public static void main(String[] args) { //Main method
         do { //Do while loop
@@ -33,6 +32,8 @@ public class Main { //Main class
             System.out.println("15. Exponent");
             System.out.println("16. Price with tax/moms");
             System.out.println("17. Exit");
+            System.out.println("18. Is whole number");
+
             //End of main menu//
 
             //options//
@@ -57,6 +58,7 @@ public class Main { //Main class
                 case 15 -> Exponent();
                 case 16 -> PriceMoms();
                 case 17 -> System.exit(0);
+                case 18 -> IsWholeNumber();
 
                 default -> System.out.println("Invalid choice");
             }
@@ -71,6 +73,7 @@ public class Main { //Main class
             } else { //If "N" break
                 break;
             }
+
         } while (true); //Loop until break is called
     }
     private static void greeting() { //Greeting method
@@ -232,12 +235,39 @@ public class Main { //Main class
         double PriceWithMoms = price * moms;
         System.out.println("The price with moms is " + PriceWithMoms);
     }
+
+
 }
 
 
+    public static void IsWholeNumber() { //returns true if the number is a whole number
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter a number");
+        double number = input.nextDouble();
+        if (number % 1 == 0) {
+            System.out.println("The number is a whole number");
+        } else {
+            System.out.println("The number is not a whole number");
+        }
+        return null;
+    }
+//Skapa en metod som tar in en char. (Indata)
+//Skriv ut om det är en siffra eller bokstav.
+//Om bokstav, skriv ut om det är en vokal eller konsonant.
 
+    public static void IsVowelOrConsonant() { //returns true if the number is a
+    Scanner input = new Scanner(System.in);
 
-
-
-
-
+    System.out.println("Enter a letter or a number");
+    if (input.hasNextInt()) {
+        System.out.println("The input is a number");
+    } else if (input.hasNext()) {
+        System.out.println("The input is a letter"
+        );
+    }
+    String letter = input.next();
+    switch (letter) {
+        case "a", "e", "i", "o", "u" -> System.out.println("The letter is a vowel");
+        default -> System.out.println("The letter is a consonant");
+    }
+}
