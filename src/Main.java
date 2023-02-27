@@ -10,9 +10,7 @@ import java.util.ArrayList;
 
 public class Main { //Main class
     public static void main(String[] args) { //Main method
-        do { //Do while loop
-
-            //todo: create a menu that will allow the user to choose which method they want to run
+        do { //Do while loop 
 
 
             //Main menu//
